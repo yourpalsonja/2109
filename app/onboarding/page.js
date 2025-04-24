@@ -1,25 +1,30 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useState } from "react";
 import Button from "@/ui/Button/Button";
 
+let onboardingContent = [
+    "This is onboarding step one content",
+    "This is onboarding step two content",
+    "You're done onboading",
+];
+
 export default function OnboardingPage() {
-    const router = useRouter();
+    const [step, setStep] = useState(0);
+    const [content, setContent] = useState(onboardingContent[step]);
+
+    function moveToNextStep() {
+        setStep(step + 1);
+        setContent(onboardingContent[step]);
+    }
 
     return (
         <div>
-            <h2>Start Onboarding</h2>
-
+            {content}
             <Button
-                value='Go to step 1'
+                value={`Go to next step`}
                 onClick={() => {
-                    router.replace("/onboarding/step-one");
-                }}
-            />
-            <Button
-                value='Skip Onboarding'
-                onClick={() => {
-                    router.push("/products");
+                    moveToNextStep();
                 }}
             />
         </div>
