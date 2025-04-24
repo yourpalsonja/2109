@@ -1,0 +1,46 @@
+.button {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    padding: 8px 16px 8px 16px;
+    border-radius: 100px;
+    align-items: center;
+
+    &:hover {
+        background-color: #18348b;
+        color: white;
+    }
+}
+
+.primary {
+    background: #2b5ffc;
+    color: white;
+}
+
+.secondary {
+    background-color: white;
+    border: 1px solid #2b5ffc;
+    color: #2b5ffc;
+}
+
+.disabled {
+    pointer-events: none;
+    color: white;
+    background-color: #7194fd;
+}
+
+.small {
+    font-size: 12px;
+    padding: 8px;
+    align-items: center;
+}
+
+.large {
+    font-size: 20px;
+    padding: 12px;
+}
+
+.error {
+    background-color: #ff5e09;
+}

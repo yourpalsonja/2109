@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Button from "@/ui/Button/Button";
 import { Cherry_Swash } from "next/font/google";
 
 const font = Cherry_Swash({
@@ -9,6 +10,9 @@ const font = Cherry_Swash({
     style: "normal",
     subsets: ["latin"],
 });
+
+const BUTTON_STYLES =
+    "group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-yellow-300 bg-black px-6 font-medium text-yellow-300 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]";
 
 export default function Page() {
     const [products, setProducts] = useState(null);
@@ -55,16 +59,11 @@ export default function Page() {
                 <h1 className={`text-4xl mb-6 text-black ${font.className}`}>
                     Welcome to my product page
                 </h1>
-                <button
-                    className='group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-yellow-300 bg-black px-6 font-medium text-yellow-300 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]'
-                    onClick={fetchProducts}
-                >
+                <button className={BUTTON_STYLES} onClick={fetchProducts}>
                     Fetch stuff!
                 </button>
-                <Link
-                    className='group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-yellow-300 bg-black px-6 font-medium text-yellow-300 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]'
-                    href='/'
-                >
+                <Button value='Test' />
+                <Link className={BUTTON_STYLES} href='/'>
                     Go home
                 </Link>
             </header>
