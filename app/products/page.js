@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import Button from "@/ui/Button/Button";
 import { Cherry_Swash } from "next/font/google";
 
@@ -15,6 +15,7 @@ const BUTTON_STYLES =
     "group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-yellow-300 bg-black px-6 font-medium text-yellow-300 transition-all duration-100 [box-shadow:5px_5px_rgb(82_82_82)] active:translate-x-[3px] active:translate-y-[3px] active:[box-shadow:0px_0px_rgb(82_82_82)]";
 
 export default function Page() {
+    const fuzzyUnicorns = useRouter();
     const [products, setProducts] = useState(null);
     const API_URL =
         "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json";
@@ -62,10 +63,12 @@ export default function Page() {
                 <button className={BUTTON_STYLES} onClick={fetchProducts}>
                     Fetch stuff!
                 </button>
-                <Button value='Test' />
-                <Link className={BUTTON_STYLES} href='/'>
-                    Go home
-                </Link>
+                <Button
+                    value='Link to homepage'
+                    onClick={() => {
+                        fuzzyUnicorns.push("/");
+                    }}
+                />
             </header>
             <div className='border-4 border-black p-4 text-black text-4xl text-center'>
                 <ProductListContent />
