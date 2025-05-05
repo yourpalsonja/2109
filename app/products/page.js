@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import Button from "@/ui/Button/Button";
+import Button from "@/components/Button/Button";
 import { Cherry_Swash } from "next/font/google";
 
 const font = Cherry_Swash({
@@ -60,7 +60,9 @@ export default function Page() {
                 <h1 className={`text-4xl mb-6 text-black ${font.className}`}>
                     Welcome to my product page
                 </h1>
-                <button className={BUTTON_STYLES} onClick={fetchProducts}>
+                <button
+                    className={BUTTON_STYLES}
+                    onClick={fetchProducts}>
                     Fetch stuff!
                 </button>
                 <Button

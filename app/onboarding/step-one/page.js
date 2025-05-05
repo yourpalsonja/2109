@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import Button from "@/ui/Button/Button";
+import Button from "@/components/Button/Button";
 
 export default function OnboardingStepOne() {
     const funkyChicken = useRouter();

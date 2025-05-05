@@ -1,0 +1,23 @@
+.overlay {
+    z-index: 10;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.wrapper {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    height: 75vh;
+    width: 75vw;
+}
+
+.modal {
+    background: #fff;
+    padding: 20px;
+}
